@@ -1,11 +1,12 @@
 {
-    "name": "ngx-file-saver",
-    "version": "0.0.1",
+    "name": "@clemox/ngx-file-saver",
+    "version": "1.0.1",
     "peerDependencies": {
         "@angular/common": "^10.0.14",
         "@angular/core": "^10.0.14"
     },
     "dependencies": {
         "tslib": "^2.0.0"
-    }
+    },
+    "license": ""
 }
