@@ -34,7 +34,7 @@ import { NgxFileSaverModule } from '@clemox/ngx-file-saver';
 
 2) Declare service
 ```typescript
-import { NgxFileSaverModule } from './../../projects/ngx-file-saver/src/lib/ngx-file-saver.module'; 
+import { NgxFileSaverModule } from '@clemox/ngx-file-saver';
 
 constructor(
     private fileSaver: NgxFileSaverService
