@@ -1,6 +1,6 @@
 {
     "name": "@clemox/ngx-file-saver",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "peerDependencies": {
         "@angular/common": "^10.0.14",
         "@angular/core": "^10.0.14"
@@ -8,5 +8,12 @@
     "dependencies": {
         "tslib": "^2.0.0"
     },
-    "license": ""
+    "author": {
+        "name": "Clemox",
+        "url": "https://clemovernet.wordpress.com/"
+    },
+    "description": "URL or blob download helper",
+    "repository": {
+        "url": "https://github.com/clem4net/angular-library"
+    }  
 }

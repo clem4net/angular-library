@@ -25,7 +25,7 @@ npm install @clemox/ngx-file-saver
 
 1) Import module
 ```typescript
-import { NgxFileSaverModule } from './../../projects/ngx-file-saver/src/lib/ngx-file-saver.module'; 
+import { NgxFileSaverModule } from '@clemox/ngx-file-saver';
 
 @NgModule({ 
     imports: [ NgxFileSaverModule ]
