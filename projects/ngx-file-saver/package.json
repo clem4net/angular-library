@@ -1,9 +1,11 @@
 {
     "name": "@clemox/ngx-file-saver",
-    "version": "1.0.3",
+    "version": "1.0.4",
+    "license": "MIT",
+    "keywords": ["file save", "file saver", "filesaver"],
     "peerDependencies": {
-        "@angular/common": "^10.0.14",
-        "@angular/core": "^10.0.14"
+        "@angular/common": "^10.1.0",
+        "@angular/core": "^10.1.0"
     },
     "dependencies": {
         "tslib": "^2.0.0"
