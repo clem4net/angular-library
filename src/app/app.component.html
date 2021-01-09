@@ -1,10 +1,29 @@
-<h1>Tester la librairie</h1>
+<h1>Test libraries</h1>
 
 <h2>ngx-file-saver</h2>
 
 <h3>URL</h3>
 <a href="#" (click)="urlDownload('https://openaccess.couperin.org/wp-content/uploads/2015/10/modeleavenantversionfinale-pour-diff.docx')">Téléchargement d'un fichier externe (CORs)</a><br>
-<a href="#" (click)="urlDownload('/angular-library/assets/lorem_ipsum.docx')">Téléchargement interne au site</a>
+<a href="#" (click)="urlDownload('/angular-library/assets/lorem_ipsum.docx')">Internal download</a>
 
 <h3>Blob</h3>
-<a href="#" (click)="blobDownload()">Télécharger un blob</a>
+<a href="#" (click)="blobDownload()">Blob download</a>
+
+<h2>ngx-furigana</h2>
+
+<strong>getReading</strong>
+<p>
+    "食[た]べ物[もの]が好きです" becomes "<span [innerText]="furiganaGetReading('食[た]べ物[もの]が好きです')"></span>"<br>
+</p>
+<strong>getExpression</strong>
+<p>
+    "食[た]べ物[もの]が好きです" becomes "<span [innerText]="furiganaGetExpression('食[た]べ物[もの]が好きです')"></span>"<br>
+</p>
+<strong>getHiragana</strong>
+<p>
+    "食[た]べ物[もの]が好きです" becomes "<span [innerText]="furiganaGetHiragana('食[た]べ物[もの]が好きです')"></span>"<br>
+</p>
+<strong>getReadingHtml</strong>
+<p>
+    "食[た]べ物[もの]が好きです" becomes "<span [innerText]="furiganaGetHtml('食[た]べ物[もの]が好きです')"></span>"
+</p>
