@@ -1,6 +1,6 @@
 {
-    "name": "@clemox/ngx-file-saver",
-    "version": "1.1.0",
+    "name": "@clemox/ngx-furigana",
+    "version": "1.0.0",
     "peerDependencies": {
         "@angular/common": "^11.0.0",
         "@angular/core": "^11.0.0"
@@ -12,7 +12,7 @@
         "name": "Clemox",
         "url": "https://clemovernet.wordpress.com/"
     },
-    "description": "URL or blob download helper",
+    "description": "Furigana display service",
     "repository": {
         "url": "https://github.com/clem4net/angular-library"
     }
