@@ -1,3 +1,4 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
     "compileOnSave": false,
     "compilerOptions": {
@@ -14,16 +15,6 @@
         "lib": [
             "es2018",
             "dom"
-        ],
-        "paths": {
-            "japon-suki-common": [
-                "dist/ngx-file-saver/ngx-file-saver",
-                "dist/ngx-file-saver"
-            ],
-            "ngx-furigana": [
-                "dist/ngx-furigana/ngx-furigana",
-                "dist/ngx-furigana"
-            ]
-        }
+        ]
     }
 }
