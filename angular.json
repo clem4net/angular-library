@@ -30,7 +30,6 @@
                             "src/styles.less"
                         ],
                         "scripts": [],
-                        "deployUrl": "/angular-library/",
                         "baseHref": "/angular-library/",
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -50,7 +49,6 @@
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
-                            "extractCss": true,
                             "namedChunks": false,
                             "extractLicenses": true,
                             "vendorChunk": false,
