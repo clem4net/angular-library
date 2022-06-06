@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
 
 
-
 @Injectable()
 export class NgxFileSaverService {
-    private isInternetExplorer: boolean;
-
-    constructor() {
-        this.detectBrowser();
-    }
-
-    //
 
     public saveUrl(url: string, fileName: string): void {
         const anchor = this.clickUrlPrepare(url, fileName);
@@ -22,12 +14,8 @@ export class NgxFileSaverService {
     }
 
     public saveBlob(data: Blob, fileName: string): void {
-        if (this.isInternetExplorer) {
-            this.blobDownloadForIe(data, fileName);
-        } else {
-            const anchor = this.clickBlobPrepare(data, fileName);
-            this.clickBlobProcess(anchor);
-        }
+        const anchor = this.clickBlobPrepare(data, fileName);
+        this.clickBlobProcess(anchor);
     }
 
     //
@@ -52,9 +40,7 @@ export class NgxFileSaverService {
         try {
             anchor.dispatchEvent(new MouseEvent('click'));
         } catch (e) {
-            const evt = document.createEvent('MouseEvents');
-            evt.initMouseEvent('click', true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null);
-            anchor.dispatchEvent(evt);
+            anchor.click();
         }
     }
 
@@ -69,15 +55,6 @@ export class NgxFileSaverService {
     private clickBlobProcess(anchor: HTMLAnchorElement): void {
         setTimeout(() => { URL.revokeObjectURL(anchor.href); }, 4E4); // 40s
         setTimeout(() => { this.clickUrlProcess(anchor); }, 0);
-    }
-
-    private blobDownloadForIe(data: Blob, name: string): void {
-        window.navigator.msSaveOrOpenBlob(data, name);
-    }
-
-
-    private detectBrowser(): void {
-        this.isInternetExplorer = navigator.userAgent.indexOf('MSIE ') > -1 || navigator.userAgent.indexOf('Trident') > -1;
     }
 
     private downloadProcess(url: string, name: string): void {

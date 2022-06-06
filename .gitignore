@@ -46,4 +46,7 @@ testem.log
 Thumbs.db
 
 # Custom
+.DS_Store
+Thumbs.db
 package-lock.json
+/.angular
