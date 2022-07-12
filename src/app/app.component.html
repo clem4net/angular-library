@@ -1,5 +1,13 @@
 <h1>Test libraries</h1>
 
+
+<h2> ngx-calendar</h2>
+
+<label for="calendar">Classic calendar</label><br>
+<input type="text" id="calendar" name="calendar" #calendarField>
+<ngx-calendar [field]="calendarField"></ngx-calendar>
+
+
 <h2>ngx-file-saver</h2>
 
 <h3>URL</h3>
@@ -27,3 +35,5 @@
 <p>
     "食[た]べ物[もの]が好きです" becomes "<span [innerText]="furiganaGetHtml('食[た]べ物[もの]が好きです')"></span>"
 </p>
+
+<br><br><br><br><br><br><br><br><br><br>

@@ -6,7 +6,7 @@ export class NgxFileSaverService {
 
     public saveUrl(url: string, fileName: string): void {
         const anchor = this.clickUrlPrepare(url, fileName);
-        if (anchor === null) {
+        if (anchor === undefined) {
             this.downloadProcess(url, fileName);
         } else {
             this.clickUrlProcess(anchor);
@@ -20,8 +20,8 @@ export class NgxFileSaverService {
 
     //
 
-    private clickUrlPrepare(url: string, name: string): HTMLAnchorElement {
-        let result = document.createElement('a');
+    private clickUrlPrepare(url: string, name: string): HTMLAnchorElement | undefined {
+        let result: HTMLAnchorElement | undefined = document.createElement('a');
         result.download = name;
         result.href = url;
         result.rel = 'noopener';
@@ -29,7 +29,7 @@ export class NgxFileSaverService {
         if (result.origin !== undefined && result.origin !== window.location.origin) {
             result.target = '_blank';
             if (this.isCorsEnabled(result.href)) {
-                result = null;
+                result = undefined;
             }
         }
 

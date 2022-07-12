@@ -1,0 +1,15 @@
+<div class="ngx-calendar-bar">
+    <a (click)="changeMonthClick(-1, 'month')" [title]="config.previousMonthTootip"><span class="ngx-calendar-chevron left"></span></a>
+    <a class="text" [title]="config.changeMonthTooltip" (click)="viewMonthClick()" [innerText]="currentMonth"></a>
+    <a (click)="changeMonthClick(1, 'month')" [title]="config.nextMonthTooltip"><span class="ngx-calendar-chevron right"></span></a>
+</div>
+
+<div class="ngx-calendar-head">
+    <div *ngFor="let d of daysDefinition" [innerText]="d.label"></div>
+</div>
+
+<div class="ngx-calendar-body">
+    <div *ngFor="let d of days" [class.visible]="d.isVisible" [class.disabled]="d.isDisabled" [class.isNotInMonth]="d.isNotInMonth" [class.select]="d.isSelect" (click)="selectDay(d)">
+        <span [class.now]="d.isNow" [innerText]="d.label"></span>
+    </div>
+</div>

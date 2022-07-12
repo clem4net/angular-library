@@ -3,6 +3,7 @@
     "compilerOptions": {
         "baseUrl": "./",
         "outDir": "./dist/out-tsc",
+        /*"allowSyntheticDefaultImports": true, /* dayjs */
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitOverride": true,
@@ -25,6 +26,9 @@
             "japon-suki-common": [
                 "dist/ngx-file-saver/ngx-file-saver",
                 "dist/ngx-file-saver"
+            ],
+            "ngx-calendar": [
+              "dist/ngx-calendar"
             ],
             "ngx-furigana": [
                 "dist/ngx-furigana/ngx-furigana",

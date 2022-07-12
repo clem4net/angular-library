@@ -33,7 +33,10 @@
                         "styles": [
                             "src/styles.less"
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "allowedCommonJsDependencies": [
+                            "dayjs"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -138,6 +141,37 @@
                     "defaultConfiguration": "production"
                 }
             }
+        },
+        "ngx-calendar": {
+          "projectType": "library",
+          "root": "projects/ngx-calendar",
+          "sourceRoot": "projects/ngx-calendar/src",
+          "prefix": "lib",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:ng-packagr",
+              "options": {
+                "project": "projects/ngx-calendar/ng-package.json"
+              },
+              "configurations": {
+                "production": {
+                  "tsConfig": "projects/ngx-calendar/tsconfig.lib.prod.json"
+                },
+                "development": {
+                  "tsConfig": "projects/ngx-calendar/tsconfig.lib.json"
+                }
+              },
+              "defaultConfiguration": "production"
+            },
+            "test": {
+              "builder": "@angular-devkit/build-angular:karma",
+              "options": {
+                "main": "projects/ngx-calendar/src/test.ts",
+                "tsConfig": "projects/ngx-calendar/tsconfig.spec.json",
+                "karmaConfig": "projects/ngx-calendar/karma.conf.js"
+              }
+            }
+          }
         }
     },
     "cli": {

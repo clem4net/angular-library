@@ -3,6 +3,7 @@ import { NgxFuriganaService } from 'projects/ngx-furigana/src/public-api';
 import { NgxFileSaverService } from './../../projects/ngx-file-saver/src/lib/services/ngx-file-saver.service';
 
 
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -13,6 +14,8 @@ export class AppComponent {
         private fileSaver: NgxFileSaverService,
         private furiganaService: NgxFuriganaService
     ) { }
+
+
 
     public urlDownload(url: string): void {
         this.fileSaver.saveUrl(url, 'Test.docx');

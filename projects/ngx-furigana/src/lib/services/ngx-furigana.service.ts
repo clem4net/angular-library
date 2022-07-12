@@ -55,7 +55,7 @@ export class NgxFuriganaService {
                 currentFurigana = '';
                 currentBase = '';
             }
-            else if (this.isLastCharacterInBlock(current, characters) && parsingBaseSection) {
+            else if (current && this.isLastCharacterInBlock(current, characters) && parsingBaseSection) {
                 currentBase += current;
                 parsingBaseSection = true;
                 segments.push(this.getSegment(currentBase, currentFurigana));
@@ -91,7 +91,7 @@ export class NgxFuriganaService {
      * @param character Character to test.
      */
     private isKanji(character: string): boolean {
-        return character && character.charCodeAt(0) >= 0x4e00 && character.charCodeAt(0) <= 0x9faf;
+        return character.charCodeAt(0) >= 0x4e00 && character.charCodeAt(0) <= 0x9faf;
     }
 
 }

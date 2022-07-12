@@ -1,0 +1,11 @@
+<div class="ngx-calendar-bar">
+    <a (click)="changeYearClick(-1, 'year')" [title]="config.previousYearTooltip"><span class="ngx-calendar-chevron left"></span></a>
+    <a class="text year" [innerText]="currentYear"></a>
+    <a (click)="changeYearClick(1, 'year')" [title]="config.nextYearTooltip"><span class="ngx-calendar-chevron right"></span></a>
+</div>
+
+<div class="ngx-calendar-body months">
+    <div *ngFor="let m of months" class="visible" [class.disabled]="m.isDisabled" [class.select]="m.isSelect" (click)="selectMonth(m)">
+        <span [class.now]="m.isNow" [innerText]="m.label"></span>
+    </div>
+</div>
