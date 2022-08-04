@@ -15,7 +15,6 @@ I made some test on following browsers.
 | Firefox                 | 80             |
 | Google Chrome           | 84             |
 | Microsoft Edge Chromium | 85             |
-| Microsoft IE            | 11             |
 
 ## Install
 ```bash

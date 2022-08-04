@@ -3,7 +3,6 @@
     "compilerOptions": {
         "baseUrl": "./",
         "outDir": "./dist/out-tsc",
-        /*"allowSyntheticDefaultImports": true, /* dayjs */
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitOverride": true,

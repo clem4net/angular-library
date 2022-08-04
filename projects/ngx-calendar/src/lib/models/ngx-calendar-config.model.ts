@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 export class NgxCalendarConfigModel {
     // general
     editMode = 0;
-    locale = 'fr';
+    locale = 'en';
     displayDateFormat = 'D MMMM YYYY';
 
     // icons
@@ -34,10 +34,5 @@ export class NgxCalendarConfigModel {
 
     nextYearTooltip = 'Année suivante';
     previousYearTooltip = 'Année précédente';
-
-    // time
-    timeNowLabel = 'Maintenant';
-    timeSelect = false;
-    timeSelectSecond = false;
 
 }

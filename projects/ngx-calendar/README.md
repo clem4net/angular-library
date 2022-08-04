@@ -1,24 +1,50 @@
-# NgxCalendar
+# ngx-calendar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+The library is full compatible with Angular, and it's simple to use.
 
-## Code scaffolding
+## Source code
 
-Run `ng generate component component-name --project ngx-calendar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-calendar`.
-> Note: Don't forget to add `--project ngx-calendar` or else it will be added to the default project in your `angular.json` file. 
+Source code can be found on my [GitHub](https://github.com/clem4net/angular-library).
 
-## Build
+## Browsers
 
-Run `ng build ngx-calendar` to build the project. The build artifacts will be stored in the `dist/` directory.
+I made some test on following browsers.
+| Browser                 | Version        |
+| ----------------------- | -------------- |
+| Firefox                 | 103            |
+| Google Chrome           | 103            |
+| Microsoft Edge Chromium | 103            |
 
-## Publishing
+## Install
+```bash
+npm install dayjs
+npm install @clemox/ngx-calendar
+```
 
-After building your library with `ng build ngx-calendar`, go to the dist folder `cd dist/ngx-calendar` and run `npm publish`.
+## Usage
 
-## Running unit tests
+1) Import module
+```typescript
+import { NgxCalendarModule } from '@clemox/ngx-calendar';
 
-Run `ng test ngx-calendar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({ 
+    imports: [ NgxCalendarModule ]
+})
+```  
 
-## Further help
+2) Use in HTML
+```html
+<input type="text" id="calendar" name="calendar" #calendarField>
+<ngx-calendar [field]="calendarField"></ngx-calendar>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The tag "ngx-calendar" has a config property.
+You can customize the calendar. For example :
+ - "locale" : define language ('fr', 'de', 'es' ...)
+ - "displayDateFormat" : format of the date displayed in the input
+ - "editMode" : "0" if the user can click in all field. "1" if the user need to click on icon. (Maybe later, user can edit the field)
+ - "minDate" : minimum date the user can select
+ - "maxDate" : maximum date the user can select
+ - "firstDayIsMonday" : true if the first day of the week is monday (default is true)
+ - "displayOnlyDaysOfMonth" : false if you want to hide days of other months (default is true)
+
