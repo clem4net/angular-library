@@ -1,5 +1,5 @@
 {
-    "name": "ngx-calendar",
+    "name": "@clemox/ngx-calendar",
     "version": "1.0.0",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
@@ -11,5 +11,13 @@
     },
     "assets": [
         "assets"
-    ]
+    ],
+    "author": {
+        "name": "Clemox",
+        "url": "https://clemovernet.wordpress.com/"
+    },
+    "description": "Calendar componnet",
+    "repository": {
+        "url": "https://github.com/clem4net/angular-library"
+    }
 }
