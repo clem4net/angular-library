@@ -50,8 +50,8 @@ export class NgxCalendarService {
 
         const now = dayjs();
 
-        const startDay = selectDate.clone().locale(config.locale).startOf('month').startOf('week').hour(0).minute(0).second(0);
-        const endDay = selectDate.clone().locale(config.locale).endOf('month').endOf('week').hour(0).minute(0).second(0);
+        const startDay = selectDate.clone().startOf('month').startOf('week').hour(0).minute(0).second(0);
+        const endDay = selectDate.clone().endOf('month').endOf('week').hour(0).minute(0).second(0);
 
         for (let m = startDay; m.isBefore(endDay); m = m.add(1, 'day')) {
             result.push(this.getDay(config, m, selectDate, viewDate, now));

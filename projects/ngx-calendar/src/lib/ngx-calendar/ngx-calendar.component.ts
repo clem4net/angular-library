@@ -44,27 +44,37 @@ export class NgxCalendarComponent implements OnChanges {
 
     private iconOpenDiv: Element | undefined;
     private iconClearDiv: Element | undefined;
-    private isLoaded = false;
+    private isFieldLoaded = false;
+    private isConfigLoaded = false;
 
     //
 
     ngOnChanges(): void {
-        import('dayjs/locale/' + this.config.locale);
-
-        if (!this.isLoaded && this.field) {
-            this.initializeField(this.config);
-            this.isLoaded = true;
+        if (this.config && !this.isConfigLoaded) {
+            dayjs.locale(this.config.locale);
+            this.isConfigLoaded = true;
         }
 
-        if (this.date && this.date.isValid()) {
-            this.selectDate = this.date.clone();
-            this.showDate(false);
+        if (!this.isFieldLoaded && this.field) {
+            this.initializeField(this.config);
+            this.isFieldLoaded = true;
+        }
+
+        if (this.date !== undefined && this.date !== null) {
+            if (typeof this.date === 'string') {
+                this.date = dayjs(this.date);
+            }
+
+            if (this.date.isValid() && this.date.isSame(this.selectDate) === false) {
+                this.selectDate = this.date.clone();
+                this.showDate(false);
+            }
         }
     }
 
     @HostListener('document:click', ['$event'])
     clickedOutside(event: Event): void {
-        if (this.isLoaded) {
+        if (this.isFieldLoaded && this.mode !== 0) {
             const elt = event.target as Element;
             if (elt !== this.field && elt !== this.iconOpenDiv && this.currentElement.nativeElement !== event.target && !this.currentElement.nativeElement.contains(elt)) {
                 this.close();

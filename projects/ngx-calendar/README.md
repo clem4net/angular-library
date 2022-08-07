@@ -47,8 +47,31 @@ import { NgxCalendarModule } from '@clemox/ngx-calendar';
 <ngx-calendar [field]="calendarField"></ngx-calendar>
 ```
 
-The tag "ngx-calendar" has a config property.
-You can customize the calendar. For example :
+4) Use locale (fr, es ...)
+If you just need english, you can forget this configuration.
+
+Somewhere in the main module, add the following line. Replace "fr" by you locale country : "de", "es" ...
+```typescript
+import('dayjs/locale/fr');
+```
+
+Next, create a configuration object "NgxCalendarConfigModel" and set "locale" property to your wanted locale.
+Set the configuration object to calendar input.
+```html
+<input type="text" id="calendar" name="calendar" #calendarField>
+<ngx-calendar [field]="calendarField" [config]="myConfig"></ngx-calendar>
+```
+
+4) Convert Dayjs date to display string with pipe
+The modume has a display pipe : "ngxDayjsDate".
+Arguments are default value and locale.
+For example :
+```
+{{model.date | ngxDayjsDate:'DD MMMM YYYY':'Pas de valeur':'fr'}}
+```
+
+
+With configuraiton, you can customize the calendar. For example :
  - "locale" : define language ('fr', 'de', 'es' ...)
  - "displayDateFormat" : format of the date displayed in the input
  - "editMode" : "0" if the user can click in all field. "1" if the user need to click on icon. (Maybe later, user can edit the field)
