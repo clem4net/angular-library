@@ -15,5 +15,8 @@
     "description": "Furigana display service",
     "repository": {
         "url": "https://github.com/clem4net/angular-library"
-    }
+    },
+    "keywords": [
+        "angular", "ngx", "japanese", "furigana", "kanji", "kana"
+    ]
 }

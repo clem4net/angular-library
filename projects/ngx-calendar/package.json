@@ -16,5 +16,8 @@
     "description": "Calendar component with dayjs",
     "repository": {
         "url": "https://github.com/clem4net/angular-library"
-    }
+    },
+    "keywords": [
+        "angular", "ngx", "calendar", "dayjs"
+    ]
 }

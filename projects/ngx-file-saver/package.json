@@ -15,5 +15,8 @@
     "description": "URL or blob download helper",
     "repository": {
         "url": "https://github.com/clem4net/angular-library"
-    }
+    },
+    "keywords": [
+        "angular", "ngx", "file", "save", "saver", "download"
+    ]
 }
