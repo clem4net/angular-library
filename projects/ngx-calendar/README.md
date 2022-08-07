@@ -23,6 +23,12 @@ npm install @clemox/ngx-calendar
 
 ## Usage
 
+1) Update tsconfig.json
+Add the following line in "compilerOptions" (because of dayjs) :
+```
+"allowSyntheticDefaultImports": true,
+```  
+
 1) Import module
 ```typescript
 import { NgxCalendarModule } from '@clemox/ngx-calendar';
@@ -32,7 +38,10 @@ import { NgxCalendarModule } from '@clemox/ngx-calendar';
 })
 ```  
 
-2) Use in HTML
+2) Import CSS
+@import '~@clemox/ngx-calendar/src/lib/assets/ngx-calendar.css';
+
+3) Use in HTML
 ```html
 <input type="text" id="calendar" name="calendar" #calendarField>
 <ngx-calendar [field]="calendarField"></ngx-calendar>

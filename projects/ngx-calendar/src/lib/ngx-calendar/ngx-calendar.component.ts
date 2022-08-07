@@ -6,7 +6,7 @@ import {
     Input,
     OnChanges, Output
 } from '@angular/core';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { Dayjs } from 'dayjs';
 import { NgxCalendarConfigModel } from '../models/ngx-calendar-config.model';
 

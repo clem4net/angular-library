@@ -1,22 +1,19 @@
 {
     "name": "@clemox/ngx-calendar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
         "dayjs": "^1.11.0"
     },
     "dependencies": {
-        "tslib": "^2.3.0"
+        "tslib": "^2.3.1"
     },
-    "assets": [
-        "assets"
-    ],
     "author": {
         "name": "Clemox",
         "url": "https://clemovernet.wordpress.com/"
     },
-    "description": "Calendar componnet",
+    "description": "Calendar component with dayjs",
     "repository": {
         "url": "https://github.com/clem4net/angular-library"
     }

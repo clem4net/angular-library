@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { Dayjs, ManipulateType } from 'dayjs';
 import { NgxCalendarConfigModel } from '../models/ngx-calendar-config.model';
 import { NgxCalendarMonthModel } from '../models/ngx-calendar-month.model';

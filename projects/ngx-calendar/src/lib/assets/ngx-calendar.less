@@ -1,22 +1,23 @@
 :root {
     --white: #FFFFFF;
-    --ngx-calendar-a: #AA0000;
+    --ngx-calendar-a: #333333;
+    --ngx-calendar-aHover: #AA0000;
     --ngx-calendar-light: #888888;
     --ngx-calendar-disabled: #aaaaaa;
+    --ngx-calendar-daySize: 33px;
+    --ngx-calendar-monthSize: 88px;
 }
 
 .ngx-calendar {
-    --ngxcal-day-size: 33px;
-    --ngxcal-month-size: 88px;
-
+    position: fixed;
     background: var(--white);
     box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 1px rgba(0, 0, 0, 0.14), 0 3px 6px 2px rgba(0, 0, 0, 0.12);
     padding: 8px;
-    position: absolute;
     user-select: none;
-    z-index: 9;
+    z-index: 99;
     min-width: 290px;
     max-width: 290px;
+    box-sizing: content-box;
 }
 
 .ngx-calendar-bar {
@@ -26,18 +27,20 @@
 
     & > a {
         font-size: 1rem;
-        line-height: var(--ngxcal-day-size);
+        line-height: var(--ngx-calendar-daySize);
         cursor: pointer;
         padding: 2px;
         text-align: center;
+        color: var(--ngx-calendar-a);
 
         &:hover {
-            color: var(--ngx-calendar-a);
+            color: var(--ngx-calendar-aHover);
         }
 
         &:first-child, &:last-child {
-            width: var(--ngxcal-day-size);
-            height: var(--ngxcal-day-size);
+            width: var(--ngx-calendar-daySize);
+            height: var(--ngx-calendar-daySize);
+            box-sizing: content-box;
         }
 
         &.text {
@@ -56,10 +59,10 @@
 
 .ngx-calendar-head {
     display: flex;
-    justify-content: space-between;
 
     & > div {
-        width: var(--ngxcal-day-size);
+        width: var(--ngx-calendar-daySize);
+        box-sizing: content-box;
         padding: 4px;
         
         display: flex;
@@ -78,9 +81,10 @@
     flex-wrap: wrap;
     
     & > div {
+        box-sizing: content-box;
         padding: 4px;
-        width: var(--ngxcal-day-size);
-        height: var(--ngxcal-day-size);
+        width: var(--ngx-calendar-daySize);
+        height: var(--ngx-calendar-daySize);
         
         & > span {
             font-size: 0.95rem;
@@ -100,7 +104,7 @@
     }
 
     &.months > div {
-        width: var(--ngxcal-month-size);;
+        width: var(--ngx-calendar-monthSize);;
         & > span {
             border-radius: 8px;
         }
@@ -113,7 +117,7 @@
 
         &.select, &:hover {
             & > span {
-                background: var(--ngx-calendar-a);
+                background: var(--ngx-calendar-aHover);
                 color: var(--white);
             }
         }
@@ -175,7 +179,7 @@ div.ngx-calendar-icon {
         font-style: normal;
 
         &:hover {
-            color: var(--ngx-calendar-a);
+            color: var(--ngx-calendar-aHover);
             cursor: pointer;
         }
 
