@@ -25,7 +25,7 @@ export class NgxCalendarService {
     public getMonths(config: NgxCalendarConfigModel, selectDate: Dayjs, viewDate: Dayjs | undefined): NgxCalendarMonthModel[] {
         const result = [];
         const now = dayjs();
-        const firstDay = dayjs().date(1).month(0).year(selectDate.year());
+        const firstDay = dayjs().year(selectDate.year()).month(0).date(1);
 
         for (let i = 1; i < 13; i++) {
             const tmp = firstDay.month(i - 1);

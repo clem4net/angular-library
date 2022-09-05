@@ -49,7 +49,7 @@ export class NgxCalendarDayComponent implements OnInit, OnChanges {
 
     public selectDay(day: NgxCalendarDayModel): void {
         if (day.isVisible && !day.isDisabled) {
-            this.selectDate = dayjs().date(day.day).month(day.month).year(day.year);
+            this.selectDate = dayjs().year(day.year).month(day.month).date(day.day);
             this.dateChange.emit(this.selectDate);
         }
     }

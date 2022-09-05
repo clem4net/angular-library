@@ -39,7 +39,7 @@ export class NgxCalendarMonthComponent implements OnInit {
 
     public selectMonth(month: NgxCalendarMonthModel): void {
         if (!month.isDisabled) {
-            this.selectDate = this.selectDate.month(month.month - 1).year(this.selectDate.year());
+            this.selectDate = this.selectDate.year(this.selectDate.year()).month(month.month - 1);
             this.dateChange.emit(this.selectDate);
         }
     }
