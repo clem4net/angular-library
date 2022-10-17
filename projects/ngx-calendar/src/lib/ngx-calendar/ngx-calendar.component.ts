@@ -22,6 +22,9 @@ export class NgxCalendarComponent implements OnChanges {
     // text field
     @Input() field: HTMLInputElement | undefined;
 
+    // disable calendar
+    @Input() disabled = false;
+
     // calendar configuration
     @Input() config = new NgxCalendarConfigModel();
 
@@ -70,6 +73,13 @@ export class NgxCalendarComponent implements OnChanges {
                 this.showDate(false);
             }
         }
+
+        if (this.isFieldLoaded) {
+            if (this.disabled) {
+                this.close();
+            }
+            this.changeDisable(this.disabled);
+        }
     }
 
     @HostListener('document:click', ['$event'])
@@ -83,10 +93,10 @@ export class NgxCalendarComponent implements OnChanges {
     }
 
     public open(): void {
-        if (this.field && this.mode === 0) {
+        if (!this.disabled && this.field && this.mode === 0) {
             this.mode = 1;
             this.disableScrolling();
-            this.toggleIcons(this.config, this.mode);
+            this.toggleIcons(this.config, this.mode, false);
         } else {
             this.close();
         }
@@ -121,7 +131,20 @@ export class NgxCalendarComponent implements OnChanges {
     private close(): void {
         this.mode = 0;
         this.enableScrolling();
-        this.toggleIcons(this.config, this.mode);
+        this.toggleIcons(this.config, this.mode, false);
+    }
+
+    private changeDisable(value: boolean): void {
+        if (this.field) {
+            if (value) {
+                this.field.setAttribute('disabled', 'disabled');
+                this.field.style.cursor = 'not-allowed';
+            } else {
+                this.field.removeAttribute('disabled');
+                this.field.style.cursor = 'pointer';
+            }
+            this.toggleIcons(this.config, this.mode, value);
+        }
     }
 
     private disableScrolling() {
@@ -130,17 +153,17 @@ export class NgxCalendarComponent implements OnChanges {
         window.onscroll = () => window.scrollTo(x, y);
     }
 
-    private toggleIcons(config: NgxCalendarConfigModel, mode: number) {
+    private toggleIcons(config: NgxCalendarConfigModel, mode: number, forceHide: boolean) {
         const showClear = (mode !== 0 && this.viewDate !== undefined && config.inputClearIconVisible);
         const showOpen = (!showClear && config.inputClearIconVisible);
 
-        if (showClear) {
+        if (showClear && !forceHide) {
             this.iconClearDiv?.classList.remove('hide');
         } else {
             this.iconClearDiv?.classList.add('hide');
         }
 
-        if (showOpen) {
+        if (showOpen && !forceHide) {
             this.iconOpenDiv?.classList.remove('hide');
         } else {
             this.iconOpenDiv?.classList.add('hide');
@@ -154,6 +177,8 @@ export class NgxCalendarComponent implements OnChanges {
     private initializeField(config: NgxCalendarConfigModel): void {
         if (this.field) {
             this.field.setAttribute('autocomplete', 'off');
+            this.field.setAttribute('readonly', 'readonly');
+            this.field.setAttribute('title', config.fieldTitle);
 
             if (this.field.parentElement && (config.inputOpenIconVisible || config.inputClearIconVisible)) {
                 const parentDiv = document.createElement('div');

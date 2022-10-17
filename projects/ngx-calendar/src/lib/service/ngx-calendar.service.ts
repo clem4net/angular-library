@@ -50,8 +50,8 @@ export class NgxCalendarService {
 
         const now = dayjs();
 
-        const startDay = selectDate.clone().startOf('month').startOf('week').hour(0).minute(0).second(0);
-        const endDay = selectDate.clone().endOf('month').endOf('week').hour(0).minute(0).second(0);
+        const startDay = selectDate.clone().locale(config.locale).startOf('month').startOf('week').hour(0).minute(0).second(0);
+        const endDay = selectDate.clone().locale(config.locale).endOf('month').endOf('week').hour(0).minute(0).second(0);
 
         for (let m = startDay; m.isBefore(endDay); m = m.add(1, 'day')) {
             result.push(this.getDay(config, m, selectDate, viewDate, now));
@@ -68,9 +68,6 @@ export class NgxCalendarService {
         result.day = day.date();
         result.month = day.month();
         result.year = day.year();
-
-        result.isNow = (result.day === now.date() && result.month === now.month() && result.year === now.year());
-
         const dayId = day.get('day');
         result.weekDay = dayId === 0 ? 7 : dayId;
 
@@ -89,6 +86,10 @@ export class NgxCalendarService {
 
         if (result.isVisible && !result.isDisabled && viewDate) {
             result.isSelect = this.isSame(day, viewDate);
+        }
+
+        if (config.displayOnlyDaysOfMonth && !result.isNotInMonth) {
+            result.isNow = (result.day === now.date() && result.month === now.month() && result.year === now.year());
         }
 
         return result;

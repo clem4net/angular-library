@@ -32,10 +32,6 @@ export class NgxCalendarDayComponent implements OnInit, OnChanges {
 
     //
 
-    private now = dayjs();
-
-    //
-
     ngOnInit(): void {
         this.daysDefinition = this.calendarService.getDaysDefinition(this.config);
     }

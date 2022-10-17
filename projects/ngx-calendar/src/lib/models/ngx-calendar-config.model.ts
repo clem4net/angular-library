@@ -5,6 +5,7 @@ export class NgxCalendarConfigModel {
     editMode = 0;
     locale = 'en';
     displayDateFormat = 'D MMMM YYYY';
+    fieldTitle = 'Choisir une date';
 
     // icons
     inputOpenIconVisible = true;

@@ -59,7 +59,7 @@ Next, create a configuration object "NgxCalendarConfigModel" and set "locale" pr
 Set the configuration object to calendar input.
 ```html
 <input type="text" id="calendar" name="calendar" #calendarField>
-<ngx-calendar [field]="calendarField" [config]="myConfig"></ngx-calendar>
+<ngx-calendar [field]="calendarField" [config]="myConfig" [disabled]="false"></ngx-calendar>
 ```
 
 4) Convert Dayjs date to display string with pipe
