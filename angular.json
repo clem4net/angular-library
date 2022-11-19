@@ -135,7 +135,7 @@
                             "tsConfig": "projects/ngx-furigana/tsconfig.lib.prod.json"
                         },
                         "development": {
-                            "tsConfig": "projects/ngx-furigana/tsconfig.prod.json"
+                            "tsConfig": "projects/ngx-furigana/tsconfig.lib.json"
                         }
                     },
                     "defaultConfiguration": "production"
