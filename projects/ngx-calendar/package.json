@@ -1,9 +1,9 @@
 {
     "name": "@clemox/ngx-calendar",
-    "version": "1.4.0",
+    "version": "2.0.0",
     "peerDependencies": {
-        "@angular/common": "^14.1.0",
-        "@angular/core": "^14.1.0",
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0",
         "dayjs": "^1.11.0"
     },
     "dependencies": {
