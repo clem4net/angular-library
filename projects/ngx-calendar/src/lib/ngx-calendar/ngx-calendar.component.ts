@@ -73,6 +73,10 @@ export class NgxCalendarComponent implements OnChanges {
                 this.showDate(false);
             }
         }
+        // clear field
+        else if (this.isFieldLoaded) {
+            this.clear(false);
+        }
 
         if (this.isFieldLoaded) {
             if (this.disabled) {
@@ -120,11 +124,13 @@ export class NgxCalendarComponent implements OnChanges {
 
     //
 
-    private clear(): void {
+    private clear(emit: boolean): void {
         if (this.field) {
             this.viewDate = undefined;
             this.field.value = '';
-            this.dateChange.emit(this.viewDate);
+            if (emit) {
+                this.dateChange.emit(this.viewDate);
+            }
         }
     }
 
@@ -193,7 +199,7 @@ export class NgxCalendarComponent implements OnChanges {
                 // add clear icon
                 this.iconClearDiv = document.createElement('i');
                 this.iconClearDiv.classList.add(config.inputClearIconClass, 'hide');
-                this.iconClearDiv.addEventListener('click', () => this.clear());
+                this.iconClearDiv.addEventListener('click', () => this.clear(true));
                 this.iconClearDiv.setAttribute('title', 'Supprimer');
                 parentDiv.appendChild(this.iconClearDiv);
 
