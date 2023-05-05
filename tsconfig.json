@@ -1,39 +1,39 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-      "baseUrl": "./",
-      "outDir": "./dist/out-tsc",
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "sourceMap": true,
-      "declaration": false,
-      "downlevelIteration": true,
-      "experimentalDecorators": true,
-      "moduleResolution": "node",
-      "importHelpers": true,
-      "allowSyntheticDefaultImports": true,
-      "target": "ES2022",
-      "module": "es2020",
-      "lib": [
-        "es2020",
-        "dom"
-      ],
-      "paths": {
-        "japon-suki-common": [
-          "dist/ngx-file-saver/ngx-file-saver",
-          "dist/ngx-file-saver"
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "lib": [
+            "ES2022",
+            "dom"
         ],
-        "ngx-calendar": [
-          "dist/ngx-calendar"
-        ],
-        "ngx-furigana": [
-          "dist/ngx-furigana/ngx-furigana",
-          "dist/ngx-furigana"
-        ]
-      },
-      "useDefineForClassFields": false
+        "paths": {
+            "japon-suki-common": [
+                "dist/ngx-file-saver/ngx-file-saver",
+                "dist/ngx-file-saver"
+            ],
+            "ngx-calendar": [
+                "dist/ngx-calendar"
+            ],
+            "ngx-furigana": [
+                "dist/ngx-furigana/ngx-furigana",
+                "dist/ngx-furigana"
+            ]
+        },
+        "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
