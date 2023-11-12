@@ -5,35 +5,35 @@
         "outDir": "./dist/out-tsc",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
         "sourceMap": true,
         "declaration": false,
         "downlevelIteration": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "importHelpers": true,
-        "allowSyntheticDefaultImports": true,
         "target": "ES2022",
         "module": "ES2022",
-        "lib": [
-            "ES2022",
-            "dom"
-        ],
+        "useDefineForClassFields": false,
         "paths": {
             "japon-suki-common": [
-                "dist/ngx-file-saver/ngx-file-saver",
                 "dist/ngx-file-saver"
             ],
             "ngx-calendar": [
                 "dist/ngx-calendar"
             ],
             "ngx-furigana": [
-                "dist/ngx-furigana/ngx-furigana",
                 "dist/ngx-furigana"
             ]
         },
-        "useDefineForClassFields": false
+        "lib": [
+            "ES2022",
+            "dom"
+        ]
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
