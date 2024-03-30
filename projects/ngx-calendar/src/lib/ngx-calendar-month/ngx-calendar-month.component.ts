@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import dayjs from 'dayjs';
-import { Dayjs, ManipulateType } from 'dayjs';
+import dayjs, { Dayjs, ManipulateType } from 'dayjs';
 import { NgxCalendarConfigModel } from '../models/ngx-calendar-config.model';
 import { NgxCalendarMonthModel } from '../models/ngx-calendar-month.model';
 import { NgxCalendarService } from '../service/ngx-calendar.service';
 
 @Component({
+    standalone: true,
     selector: 'ngx-calendar-month',
+    imports: [],
     templateUrl: 'ngx-calendar-month.component.html'
 })
 export class NgxCalendarMonthComponent implements OnInit {

@@ -5,11 +5,15 @@
 </div>
 
 <div class="ngx-calendar-head">
-    <div *ngFor="let d of daysDefinition" [innerText]="d.label"></div>
+    @for (d of daysDefinition; track d) {
+        <div [innerText]="d.label"></div>
+    }
 </div>
 
 <div class="ngx-calendar-body">
-    <div *ngFor="let d of days" [class.visible]="d.isVisible" [class.disabled]="d.isDisabled" [class.isNotInMonth]="d.isNotInMonth" [class.select]="d.isSelect" (click)="selectDay(d)">
-        <span [class.now]="d.isNow" [innerText]="d.label"></span>
-    </div>
+    @for (d of days; track d) {
+        <div [class.visible]="d.isVisible" [class.disabled]="d.isDisabled" [class.isNotInMonth]="d.isNotInMonth" [class.select]="d.isSelect" (click)="selectDay(d)">
+            <span [class.now]="d.isNow" [innerText]="d.label"></span>
+        </div>
+    }
 </div>

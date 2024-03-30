@@ -6,11 +6,16 @@ import {
     Input,
     OnChanges, Output
 } from '@angular/core';
-import dayjs from 'dayjs';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { NgxCalendarConfigModel } from '../models/ngx-calendar-config.model';
+import { NgxCalendarDayComponent } from '../ngx-calendar-day/ngx-calendar-day.component';
+import { NgxCalendarMonthComponent } from '../ngx-calendar-month/ngx-calendar-month.component';
 
 @Component({
+    standalone: true,
+    imports: [
+        NgxCalendarDayComponent, NgxCalendarMonthComponent
+    ],
     selector: 'ngx-calendar',
     templateUrl: 'ngx-calendar.component.html'
 })

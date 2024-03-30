@@ -1,4 +1,6 @@
-<div *ngIf="mode !== 0" class="ngx-calendar">
-    <ngx-calendar-day [hidden]="mode !== 1" [config]="config" [selectDate]="selectDate" [viewDate]="viewDate" (dateChange)="selectDay($event)" (showMonthView)="showMonths()"></ngx-calendar-day>
-    <ngx-calendar-month [hidden]="mode !== 2" [config]="config" [selectDate]="selectDate" [viewDate]="viewDate" (dateChange)="selectMonth($event)"></ngx-calendar-month>
-</div>
+@if (mode !== 0) {
+    <div class="ngx-calendar">
+        <ngx-calendar-day [hidden]="mode !== 1" [config]="config" [selectDate]="selectDate" [viewDate]="viewDate" (dateChange)="selectDay($event)" (showMonthView)="showMonths()"></ngx-calendar-day>
+        <ngx-calendar-month [hidden]="mode !== 2" [config]="config" [selectDate]="selectDate" [viewDate]="viewDate" (dateChange)="selectMonth($event)"></ngx-calendar-month>
+    </div>
+}

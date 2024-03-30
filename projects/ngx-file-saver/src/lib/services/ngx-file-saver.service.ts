@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NgxFileSaverService {
 
     public saveUrl(url: string, fileName: string): void {

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import dayjs from 'dayjs';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { NgxCalendarConfigModel } from '../models/ngx-calendar-config.model';
 import { NgxCalendarDayModel } from '../models/ngx-calendar-day.model';
 import { NgxCalendarMonthModel } from '../models/ngx-calendar-month.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NgxCalendarService {
 
     public getDaysDefinition(config: NgxCalendarConfigModel): NgxCalendarDayModel[] {
@@ -111,7 +110,7 @@ export class NgxCalendarService {
 
         if (config.maxDate && config.maxDate.isBefore(date)) {
             result = false;
-        } 
+        }
         if (config.minDate) {
             const endOfMonth = date.endOf('month');
             if (config.minDate.add(1, 'day').isAfter(endOfMonth)) {

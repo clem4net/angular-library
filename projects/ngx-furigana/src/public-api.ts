@@ -3,4 +3,4 @@
  */
 
 export * from './lib/services/ngx-furigana.service';
-export * from './lib/ngx-furigana.module';
+

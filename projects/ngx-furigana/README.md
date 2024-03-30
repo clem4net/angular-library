@@ -18,16 +18,7 @@ npm install @clemox/ngx-furigana
 
 ## Usage
 
-1) Import module
-```typescript
-import { NgxFuriganaModule } from '@clemox/ngx-furigana';
-
-@NgModule({ 
-    imports: [ NgxFuriganaModule ]
-})
-```  
-
-2) Declare service
+1) Declare service
 ```typescript
 import { NgxFuriganaService } from '@clemox/ngx-furigana';
 
@@ -36,7 +27,7 @@ constructor(
 ) { }
 ```  
 
-3) Call the service
+2) Call the service
 
 The method "getReading" returns the input text.
 ```typescript

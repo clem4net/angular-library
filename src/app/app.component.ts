@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { NgxFuriganaService } from 'projects/ngx-furigana/src/public-api';
+import { NgxCalendarComponent } from '../../projects/ngx-calendar/src/lib/ngx-calendar/ngx-calendar.component';
+import { NgxFuriganaService } from '../../projects/ngx-furigana/src/lib/services/ngx-furigana.service';
 import { NgxFileSaverService } from './../../projects/ngx-file-saver/src/lib/services/ngx-file-saver.service';
 
 
 
 @Component({
+    standalone: true,
     selector: 'app-root',
+    imports: [
+        NgxCalendarComponent
+    ],
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less']
+    styleUrl: './app.component.less'
 })
 export class AppComponent {
     constructor(
         private fileSaver: NgxFileSaverService,
         private furiganaService: NgxFuriganaService
     ) { }
-
-
 
     public urlDownload(url: string): void {
         this.fileSaver.saveUrl(url, 'Test.docx');

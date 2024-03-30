@@ -5,7 +5,9 @@
 </div>
 
 <div class="ngx-calendar-body months">
-    <div *ngFor="let m of months" class="visible" [class.disabled]="m.isDisabled" [class.select]="m.isSelect" (click)="selectMonth(m)">
-        <span [class.now]="m.isNow" [innerText]="m.label"></span>
-    </div>
+    @for (m of months; track m)  {
+        <div class="visible" [class.disabled]="m.isDisabled" [class.select]="m.isSelect" (click)="selectMonth(m)">
+            <span [class.now]="m.isNow" [innerText]="m.label"></span>
+        </div>
+    }
 </div>

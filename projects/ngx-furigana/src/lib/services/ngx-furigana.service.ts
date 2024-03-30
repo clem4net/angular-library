@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FuriganaSegment } from '../models/furigana-segment.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NgxFuriganaService {
-    constructor() {}
 
     // Public methods
 
