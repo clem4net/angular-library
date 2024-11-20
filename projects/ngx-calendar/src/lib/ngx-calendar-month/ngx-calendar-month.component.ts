@@ -5,7 +5,6 @@ import { NgxCalendarMonthModel } from '../models/ngx-calendar-month.model';
 import { NgxCalendarService } from '../service/ngx-calendar.service';
 
 @Component({
-    standalone: true,
     selector: 'ngx-calendar-month',
     imports: [],
     templateUrl: 'ngx-calendar-month.component.html'

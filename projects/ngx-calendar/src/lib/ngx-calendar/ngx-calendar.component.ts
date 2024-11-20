@@ -12,7 +12,6 @@ import { NgxCalendarDayComponent } from '../ngx-calendar-day/ngx-calendar-day.co
 import { NgxCalendarMonthComponent } from '../ngx-calendar-month/ngx-calendar-month.component';
 
 @Component({
-    standalone: true,
     imports: [
         NgxCalendarDayComponent, NgxCalendarMonthComponent
     ],

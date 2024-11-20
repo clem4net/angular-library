@@ -6,7 +6,6 @@ import { NgxFileSaverService } from './../../projects/ngx-file-saver/src/lib/ser
 
 
 @Component({
-    standalone: true,
     selector: 'app-root',
     imports: [
         NgxCalendarComponent
